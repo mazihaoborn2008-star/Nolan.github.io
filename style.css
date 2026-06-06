@@ -1076,37 +1076,75 @@ img { max-width: 100%; display: block; }
 /* ========== Responsive ========== */
 @media (max-width: 860px) {
   .nav-links { display: none; }
-  .nav-links.open {
+  .hamburger { display: flex; }
+
+  /* Mobile nav: floating glass dropdown */
+  .nav-links {
+    position: fixed;
+    top: 96px;
+    left: 20px;
+    right: 20px;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(244,247,251,0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    padding: 32px 24px;
-    gap: 20px;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    z-index: 99999;
-    overflow-y: auto;
+    gap: 6px;
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    z-index: 10002;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px) scale(0.98);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
   }
+
+  .nav-links.active,
+  .nav-links.open,
+  body.nav-open .nav-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
   .nav-links a {
-    font-size: 17px;
-    padding: 8px 0;
-    color: var(--text);
-    font-weight: 500;
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    color: #101828;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    background: rgba(255, 255, 255, 0.52);
   }
 
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: var(--blue);
+  .nav-links a:hover {
+    background: rgba(37, 99, 235, 0.10);
+    color: #2563eb;
   }
 
-  .hamburger { display: flex; }
+  /* Prevent hero from covering menu */
+  main,
+  .hero,
+  .page-hero,
+  .glass-panel,
+  .hero-content,
+  .hero-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  #liquidTrailLayer {
+    z-index: 0 !important;
+  }
 
   .hero,
   .product-layout,
