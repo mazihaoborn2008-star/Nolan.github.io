@@ -204,19 +204,18 @@ function initLiquidTrail() {
     });
   }
 
-  function createTrailBlob(x, y, strength) {
-    strength = strength || 1;
+  function createTrailBlob(x, y, strength = 1) {
     const now = performance.now();
 
-    if (now - lastBlobTime < 38) return;
+    if (now - lastBlobTime < 28) return;
     lastBlobTime = now;
 
     const blob = document.createElement('div');
     blob.className = 'trail-blob';
 
-    const size = 48 + Math.random() * 56 * strength;
-    const offsetX = (Math.random() - 0.5) * 18;
-    const offsetY = (Math.random() - 0.5) * 18;
+    const size = 72 + Math.random() * 70 * strength;
+    const offsetX = (Math.random() - 0.5) * 14;
+    const offsetY = (Math.random() - 0.5) * 14;
 
     blob.style.setProperty('--x', `${x + offsetX}px`);
     blob.style.setProperty('--y', `${y + offsetY}px`);
@@ -226,12 +225,12 @@ function initLiquidTrail() {
 
     window.setTimeout(() => {
       blob.remove();
-    }, 900);
+    }, 950);
   }
 
   window.addEventListener('pointermove', (event) => {
     moveCursor(event.clientX, event.clientY);
-    createTrailBlob(event.clientX, event.clientY, event.pointerType === 'touch' ? 1.15 : 1);
+    createTrailBlob(event.clientX, event.clientY, event.pointerType === 'touch' ? 1.25 : 1);
   }, { passive: true });
 
   window.addEventListener('pointerleave', () => {
@@ -241,7 +240,7 @@ function initLiquidTrail() {
   window.addEventListener('touchmove', (event) => {
     const touch = event.touches[0];
     if (!touch) return;
-    createTrailBlob(touch.clientX, touch.clientY, 1.25);
+    createTrailBlob(touch.clientX, touch.clientY, 1.35);
   }, { passive: true });
 
   let scrollTimer = null;
