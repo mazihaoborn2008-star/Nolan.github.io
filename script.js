@@ -181,9 +181,17 @@ function initLiquidTrail() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
+  let trailLayer = document.querySelector('#liquidTrailLayer');
+
+  if (!trailLayer) {
+    trailLayer = document.createElement('div');
+    trailLayer.id = 'liquidTrailLayer';
+    document.body.prepend(trailLayer);
+  }
+
   const cursor = document.createElement('div');
   cursor.className = 'liquid-cursor';
-  document.body.appendChild(cursor);
+  trailLayer.appendChild(cursor);
 
   let lastBlobTime = 0;
   let lastX = 0;
@@ -221,7 +229,7 @@ function initLiquidTrail() {
     blob.style.setProperty('--y', `${y + offsetY}px`);
     blob.style.setProperty('--size', `${size}px`);
 
-    document.body.appendChild(blob);
+    trailLayer.appendChild(blob);
 
     window.setTimeout(() => {
       blob.remove();
@@ -230,7 +238,8 @@ function initLiquidTrail() {
 
   window.addEventListener('pointermove', (event) => {
     moveCursor(event.clientX, event.clientY);
-    createTrailBlob(event.clientX, event.clientY, event.pointerType === 'touch' ? 1.25 : 1);
+    const strength = event.pointerType === 'touch' ? 1.25 : 1;
+    createTrailBlob(event.clientX, event.clientY, strength);
   }, { passive: true });
 
   window.addEventListener('pointerleave', () => {

@@ -1332,6 +1332,51 @@ button:active,
 }
 
 /* Liquid cursor and touch trail */
+/* ===== Put liquid trail behind all page content ===== */
+
+html,
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Background effect layer */
+#liquidTrailLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Make sure real content is above the trail */
+.site-header,
+.navbar,
+main,
+section,
+footer,
+.site-footer,
+.page-hero,
+.hero,
+.tech-stage,
+.glass-panel,
+.glass-card,
+.feature-card,
+.info-card,
+.risk-card,
+.product-card,
+.product-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* If some content is still being covered, this catches normal direct children */
+body > *:not(#liquidTrailLayer) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Trail elements now live inside the background layer */
 .liquid-cursor {
   position: fixed;
   left: 0;
@@ -1340,17 +1385,17 @@ button:active,
   height: 190px;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 0;
   opacity: 0;
   transform: translate(-50%, -50%);
   background:
     radial-gradient(circle,
-      rgba(96, 190, 255, 0.58) 0%,
-      rgba(170, 225, 255, 0.45) 28%,
-      rgba(255, 255, 255, 0.38) 52%,
-      rgba(255, 255, 255, 0.12) 68%,
+      rgba(96, 190, 255, 0.52) 0%,
+      rgba(170, 225, 255, 0.38) 28%,
+      rgba(255, 255, 255, 0.28) 52%,
+      rgba(255, 255, 255, 0.10) 68%,
       transparent 82%);
-  filter: blur(14px);
+  filter: blur(16px);
   mix-blend-mode: normal;
   transition: opacity 160ms ease;
 }
@@ -1363,27 +1408,27 @@ button:active,
   top: var(--y);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9997;
+  z-index: 0;
   transform: translate(-50%, -50%) scale(0.6);
   background:
     radial-gradient(circle,
-      rgba(80, 180, 255, 0.62) 0%,
-      rgba(150, 220, 255, 0.46) 30%,
-      rgba(255, 255, 255, 0.38) 54%,
-      rgba(255, 255, 255, 0.16) 70%,
+      rgba(80, 180, 255, 0.56) 0%,
+      rgba(150, 220, 255, 0.38) 30%,
+      rgba(255, 255, 255, 0.30) 54%,
+      rgba(255, 255, 255, 0.12) 70%,
       transparent 86%);
-  filter: blur(12px);
+  filter: blur(14px);
   mix-blend-mode: normal;
   animation: blueGlassTrailFade 920ms ease-out forwards;
 }
 
 @keyframes blueGlassTrailFade {
   0% {
-    opacity: 0.9;
+    opacity: 0.82;
     transform: translate(-50%, -50%) scale(0.55);
   }
   45% {
-    opacity: 0.55;
+    opacity: 0.42;
   }
   100% {
     opacity: 0;
