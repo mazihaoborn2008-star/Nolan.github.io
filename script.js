@@ -1,4 +1,4 @@
-// ===== FINAL MOBILE MENU TOGGLE FIX =====
+﻿// ===== FINAL MOBILE MENU TOGGLE FIX =====
 document.addEventListener("DOMContentLoaded", () => {
   const toggle =
     document.querySelector(".mobile-menu-toggle") ||
@@ -65,20 +65,7 @@ document.querySelectorAll('.size-btn').forEach(btn => {
   });
 });
 
-// Product page: quantity
-const qtyMinus = document.getElementById('qty-minus');
-const qtyPlus = document.getElementById('qty-plus');
-const qtyValue = document.getElementById('qty-value');
-if (qtyMinus && qtyPlus && qtyValue) {
-  qtyMinus.addEventListener('click', () => {
-    let v = parseInt(qtyValue.textContent);
-    if (v > 1) qtyValue.textContent = v - 1;
-  });
-  qtyPlus.addEventListener('click', () => {
-    let v = parseInt(qtyValue.textContent);
-    if (v < 10) qtyValue.textContent = v + 1;
-  });
-}
+
 
 // Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
@@ -306,4 +293,26 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiquidButtons();
   initDraggableChips();
   initLiquidTrail();
+});
+
+/* ===== Quantity selector fix ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const decreaseBtn = document.querySelector("#decreaseQty");
+  const increaseBtn = document.querySelector("#increaseQty");
+  const quantityValue = document.querySelector("#quantityValue");
+  if (!decreaseBtn || !increaseBtn || !quantityValue) return;
+  let quantity = Number(quantityValue.textContent) || 1;
+  function updateQuantity() {
+    quantityValue.textContent = quantity;
+    decreaseBtn.disabled = quantity <= 1;
+    decreaseBtn.style.opacity = quantity <= 1 ? "0.45" : "1";
+    decreaseBtn.style.cursor = quantity <= 1 ? "not-allowed" : "pointer";
+  }
+  decreaseBtn.addEventListener("click", () => {
+    if (quantity > 1) { quantity -= 1; updateQuantity(); }
+  });
+  increaseBtn.addEventListener("click", () => {
+    quantity += 1; updateQuantity();
+  });
+  updateQuantity();
 });
