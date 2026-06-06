@@ -33,38 +33,51 @@
     <p>Smart technology brings convenience, but it also creates privacy, health, and fairness concerns.</p>
   </section>
 
-  <section class="risk-grid">
-    <article class="risk-card">
-      <h3>Data Privacy</h3>
-      <p>Smart Stride collects running data, performance data, and possibly location data. This information must be protected.</p>
+  <!-- Risk layout: main concern + high impact -->
+  <section class="risk-layout">
+    <article class="glass-panel risk-main">
+      <p class="eyebrow">Main Concern</p>
+      <h2>Data Privacy</h2>
+      <p>
+        Smart Stride collects running data, performance data, and possibly
+        location data. This information must be protected to maintain customer trust.
+      </p>
     </article>
-    <article class="risk-card">
-      <h3>AI Accuracy</h3>
-      <p>The AI analysis may not always be accurate.</p>
-    </article>
-    <article class="risk-card">
-      <h3>Wrong Advice</h3>
-      <p>If the product gives wrong advice, users may change their running style in a harmful way.</p>
-    </article>
-    <article class="risk-card">
-      <h3>Health and Injury Risk</h3>
-      <p>Incorrect running advice could increase injury risk.</p>
-    </article>
-    <article class="risk-card">
+
+    <div class="risk-secondary">
+      <article class="glass-card">
+        <h3>AI Accuracy</h3>
+        <p>The AI analysis may not always be accurate.</p>
+      </article>
+      <article class="glass-card">
+        <h3>Wrong Advice</h3>
+        <p>Wrong advice could lead users to change their running style in a harmful way.</p>
+      </article>
+      <article class="glass-card">
+        <h3>Health and Injury Risk</h3>
+        <p>Incorrect advice could increase injury risk.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Operational risks -->
+  <section class="risk-tertiary">
+    <article class="risk-op">
       <h3>IoT and Connection Problems</h3>
       <p>Bluetooth, sensors, app syncing, or internet connection may fail.</p>
     </article>
-    <article class="risk-card">
+    <article class="risk-op">
       <h3>Race Fairness</h3>
       <p>Smart Stride could be considered unfair or cheating in some competitive races.</p>
     </article>
-    <article class="risk-card">
+    <article class="risk-op">
       <h3>High Price</h3>
       <p>The smart technology may make the shoes less affordable for some customers.</p>
     </article>
   </section>
 
-  <section class="mitigation-section">
+  <!-- Mitigation – dark glass panel -->
+  <section class="dark-glass mitigation-panel">
     <h2>How Smart Stride Reduces Risks</h2>
     <ul>
       <li>Clear privacy policy</li>
@@ -72,7 +85,6 @@
       <li>AI advice disclaimer</li>
       <li>Regular software updates</li>
       <li>Customer support</li>
-      <li>Users should not treat AI advice as medical advice</li>
     </ul>
   </section>
 </main>
