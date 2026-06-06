@@ -1,4 +1,4 @@
-/* ========== CSS Variables ========== */
+﻿/* ========== CSS Variables ========== */
 :root {
   --bg: #f4f7fb;
   --dark: #07111f;
@@ -453,7 +453,7 @@ img { max-width: 100%; display: block; }
 }
 
 .product-features li::before {
-  content: "✓";
+  content: "鉁?;
   position: absolute;
   left: 0;
   color: var(--blue);
@@ -502,7 +502,7 @@ img { max-width: 100%; display: block; }
 }
 
 .level-card li::before {
-  content: "✓";
+  content: "鉁?;
   position: absolute;
   left: 0;
   color: var(--blue);
@@ -906,7 +906,7 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 .market-card li::before {
-  content: "–";
+  content: "鈥?;
   position: absolute;
   left: 0;
   color: var(--blue);
@@ -937,7 +937,7 @@ img { max-width: 100%; display: block; }
 }
 
 .info-section li::before {
-  content: "–";
+  content: "鈥?;
   position: absolute;
   left: 0;
   color: var(--blue);
@@ -991,7 +991,7 @@ img { max-width: 100%; display: block; }
 }
 
 .mix-card li::before {
-  content: "•";
+  content: "鈥?;
   position: absolute;
   left: 0;
   color: var(--blue);
@@ -1522,5 +1522,95 @@ body > *:not(#liquidTrailLayer) {
   .draggable-chip {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ===== FINAL MOBILE MENU FIX ===== */
+
+@media (max-width: 860px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999999 !important;
+  }
+
+  .navbar {
+    position: relative !important;
+    z-index: 1000000 !important;
+  }
+
+  .mobile-menu-toggle,
+  .menu-toggle,
+  .hamburger {
+    display: flex !important;
+    position: relative !important;
+    z-index: 1000002 !important;
+  }
+
+  .nav-links {
+    display: none !important;
+    position: fixed !important;
+    top: var(--mobile-menu-top, 120px) !important;
+    left: 18px !important;
+    right: 18px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 18px !important;
+    border-radius: 26px !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 28px 90px rgba(15, 23, 42, 0.28) !important;
+    backdrop-filter: blur(28px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+    z-index: 1000001 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-10px) scale(0.98) !important;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease !important;
+  }
+
+  .nav-links.active,
+  .nav-links.open,
+  body.nav-open .nav-links,
+  body.menu-open .nav-links {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1) !important;
+  }
+
+  .nav-links a {
+    display: block !important;
+    width: 100% !important;
+    padding: 15px 18px !important;
+    border-radius: 16px !important;
+    background: rgba(245, 247, 251, 0.95) !important;
+    color: #111827 !important;
+    font-size: 16px !important;
+    font-weight: 750 !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active {
+    background: rgba(37, 99, 235, 0.12) !important;
+    color: #2563eb !important;
+  }
+
+  main,
+  .hero,
+  .page-hero,
+  .glass-panel,
+  .hero-text,
+  .hero-content {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  #liquidTrailLayer {
+    z-index: 0 !important;
   }
 }

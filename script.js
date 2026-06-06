@@ -1,18 +1,53 @@
-// Mobile nav toggle
-const hamburger = document.querySelector('.mobile-menu-toggle') || document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    document.body.classList.toggle('nav-open');
+// ===== FINAL MOBILE MENU TOGGLE FIX =====
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle =
+    document.querySelector(".mobile-menu-toggle") ||
+    document.querySelector(".menu-toggle") ||
+    document.querySelector(".hamburger");
+
+  const navLinks = document.querySelector(".nav-links");
+  const header = document.querySelector(".site-header");
+
+  if (!toggle || !navLinks) return;
+
+  function updateMenuPosition() {
+    if (!header) return;
+    const rect = header.getBoundingClientRect();
+    const top = Math.max(rect.bottom + 10, 90);
+    document.documentElement.style.setProperty("--mobile-menu-top", `${top}px`);
+  }
+
+  updateMenuPosition();
+  window.addEventListener("resize", updateMenuPosition);
+  window.addEventListener("scroll", updateMenuPosition, { passive: true });
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateMenuPosition();
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("nav-open");
+    document.body.classList.toggle("menu-open");
   });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      document.body.classList.remove('nav-open');
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      document.body.classList.remove("nav-open");
+      document.body.classList.remove("menu-open");
     });
   });
-}
+
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("nav-open")) return;
+    const clickedInsideMenu = navLinks.contains(event.target);
+    const clickedToggle = toggle.contains(event.target);
+    if (!clickedInsideMenu && !clickedToggle) {
+      navLinks.classList.remove("active");
+      document.body.classList.remove("nav-open");
+      document.body.classList.remove("menu-open");
+    }
+  });
+});
 
 // Product page: color selector
 document.querySelectorAll('.color-btn').forEach(btn => {
