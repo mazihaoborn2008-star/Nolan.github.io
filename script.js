@@ -10,13 +10,6 @@ if (hamburger) {
   });
 }
 
-// Active nav link
-const currentPage = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href === currentPage) a.classList.add('active');
-});
-
 // Product page: color selector
 document.querySelectorAll('.color-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -48,23 +41,6 @@ if (qtyMinus && qtyPlus && qtyValue) {
   });
 }
 
-// Thumbnail click (product page)
-document.querySelectorAll('.thumb').forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
-  });
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
 // Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -75,9 +51,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.feature-card, .step-card, .app-card, .risk-card, .value-card, .safeguard-item').forEach(el => {
+document.querySelectorAll('.feature-card, .process-step, .risk-card, .value-card, .ship-card, .spec-card').forEach(el => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s, transform 0.5s';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.4s, transform 0.4s';
   observer.observe(el);
 });

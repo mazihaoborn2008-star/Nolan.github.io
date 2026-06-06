@@ -1,157 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>App & Shop – Smart Stride</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
+
+<header class="site-header">
   <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">SMART STRIDE</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="product.html">Product</a>
-        <a href="technology.html">Technology</a>
-        <a href="app.html" class="active">App</a>
-        <a href="risks.html">Risks</a>
-        <a href="about.html">About Us</a>
-        <a href="product.html" class="btn-primary">Shop Now</a>
-      </div>
-      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">SMART STRIDE</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="app.html" class="active">App</a>
+      <a href="risks.html">Risks</a>
+      <a href="about.html">About Us</a>
     </div>
+    <a href="product.html" class="nav-button">Shop Now</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+</header>
 
-  <!-- APP HERO -->
-  <section class="app-hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="section-label">Smart Stride App</div>
-        <h1 class="section-title" style="font-size:2.8rem">Everything You Need,<br>All in One App.</h1>
-        <p class="section-subtitle">Buy Smart Stride online, track your order, sync your shoes, and receive AI running insights through the mobile app.</p>
-        <div class="hero-buttons" style="margin-top:2rem">
-          <a href="#" class="btn-primary">Download App</a>
-          <a href="product.html" class="btn-outline">Shop Online</a>
-        </div>
+<main>
+  <section class="app-hero-content">
+    <div>
+      <p class="eyebrow">App & E-commerce</p>
+      <h1 style="font-size:48px;line-height:1.1;margin:14px 0 20px">Everything You Need,<br>All in One App.</h1>
+      <p style="font-size:18px;line-height:1.7;color:var(--muted);max-width:520px">
+        Buy Smart Stride online, track your order, sync your shoes,
+        and receive AI running insights through the mobile app.
+      </p>
+      <div class="hero-actions" style="margin-top:32px">
+        <a class="primary-button" href="product.html">Shop Online</a>
+        <a class="secondary-button" href="#">Download App</a>
       </div>
-      <div class="hero-image">
-        <div class="app-mockup">
-          <div class="screen">
-            <div class="status-bar"><span>9:41</span><span>⚡ 86%</span></div>
-            <div class="app-logo">👟</div>
-            <h3>Smart Stride</h3>
-            <p>Your AI running companion</p>
-          </div>
-        </div>
-      </div>
+    </div>
+
+    <div class="phone-card">
+      <h3>Today's Run</h3>
+      <div class="score">86</div>
+      <p>Gait Score</p>
+      <ul>
+        <li>Distance: 8.42 km</li>
+        <li>Pace: 5'28 /km</li>
+        <li>Shoe Health: Good</li>
+      </ul>
     </div>
   </section>
 
-  <!-- APP FEATURES -->
-  <section class="app-features">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-label">Features</div>
-        <h2 class="section-title">Built for Your Running Journey</h2>
+  <section class="feature-grid">
+    <article class="feature-card">
+      <h3>Online Ordering</h3>
+      <p>Customers can purchase Smart Stride through the website or mobile app.</p>
+    </article>
+    <article class="feature-card">
+      <h3>Order Tracking</h3>
+      <p>Customers can track delivery status after purchase.</p>
+    </article>
+    <article class="feature-card">
+      <h3>App Sync</h3>
+      <p>The shoes connect to the app and upload running data.</p>
+    </article>
+    <article class="feature-card">
+      <h3>Customer Support</h3>
+      <p>Users can contact support and receive online product help.</p>
+    </article>
+  </section>
+
+  <section class="process-section">
+    <h2>From Shopping to Running</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="num">1</div>
+        <h3>Choose Shoes</h3>
+        <p>Browse and select your perfect pair.</p>
       </div>
-      <div class="app-cards">
-        <div class="app-card">
-          <div class="icon blue">🛒</div>
-          <h3>Online Ordering</h3>
-          <p>Customers can purchase Smart Stride directly through the website or mobile app with a seamless checkout experience.</p>
-        </div>
-        <div class="app-card">
-          <div class="icon orange">📦</div>
-          <h3>Order Tracking</h3>
-          <p>Customers can track delivery status after purchase with real-time shipping updates.</p>
-        </div>
-        <div class="app-card">
-          <div class="icon green">🔄</div>
-          <h3>App Sync</h3>
-          <p>The shoes connect to the app via Bluetooth and automatically upload all running data after each session.</p>
-        </div>
-        <div class="app-card">
-          <div class="icon purple">💬</div>
-          <h3>Customer Support</h3>
-          <p>Users can contact support, access FAQs, and receive product help directly through the app.</p>
-        </div>
+      <div class="process-step">
+        <div class="num">2</div>
+        <h3>Checkout</h3>
+        <p>Secure and fast online payment.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">3</div>
+        <h3>Track Delivery</h3>
+        <p>Real-time shipping updates.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px">
+      <div class="process-step" style="display:inline-block;min-width:240px">
+        <div class="num">4</div>
+        <h3>Sync with App</h3>
+        <p>Connect and start running smarter.</p>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ECOMMERCE FLOW -->
-  <section class="ecom-flow">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-label">How It Works</div>
-        <h2 class="section-title">From Click to Running</h2>
-      </div>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="num">1</div>
-          <h4>Choose Shoes</h4>
-          <p>Browse and select your perfect pair</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="num">2</div>
-          <h4>Checkout</h4>
-          <p>Secure and fast online payment</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="num">3</div>
-          <h4>Track Delivery</h4>
-          <p>Real-time shipping updates</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="num">4</div>
-          <h4>Sync with App</h4>
-          <p>Connect and start running smarter</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer class="site-footer">
+  <div>
+    <h3>SMART STRIDE</h3>
+    <p>Run smarter. Run stronger.</p>
+  </div>
+  <div>
+    <h4>Product</h4>
+    <a href="product.html">Smart Stride Pro</a>
+    <a href="technology.html">Technology</a>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <a href="#">Help Center</a>
+    <a href="#">Shipping</a>
+  </div>
+  <div>
+    <h4>Legal</h4>
+    <a href="risks.html">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>SMART STRIDE</h3>
-          <p>AI-powered running shoes designed to help you run smarter, safer, and stronger.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Products</h4>
-          <a href="product.html">Smart Stride Pro</a>
-          <a href="app.html">Mobile App</a>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#">Help Centre</a>
-          <a href="app.html">Contact Us</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="#">Careers</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="risks.html">Privacy Policy</a>
-          <a href="risks.html">Terms of Service</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Smart Stride. All rights reserved.</span>
-        <span>Designed for runners, by runners.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
