@@ -191,6 +191,16 @@ ul { list-style: none; }
   margin-top: 8px;
 }
 
+/* Feature grid 6 cards (3x2) */
+.feature-grid-6 {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 /* ========== Page Hero (Product, Tech, App, Risks, About) ========== */
 .page-hero {
   max-width: 1180px;
@@ -741,6 +751,260 @@ ul { list-style: none; }
   color: #6b7280;
 }
 
+/* ========== Market Page ========== */
+.market-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.market-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.market-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.market-card p,
+.market-card li {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.market-card ul {
+  margin-top: 8px;
+}
+
+.market-card li {
+  padding: 4px 0;
+  padding-left: 18px;
+  position: relative;
+}
+
+.market-card li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.info-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+}
+
+.info-section h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.info-section p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.info-section ul {
+  margin-top: 12px;
+}
+
+.info-section li {
+  font-size: 15px;
+  color: var(--text);
+  padding: 6px 0 6px 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.info-section li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ========== Marketing Mix ========== */
+.mix-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.mix-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.mix-card h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--blue);
+}
+
+.mix-card li {
+  font-size: 15px;
+  color: var(--muted);
+  padding: 5px 0 5px 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.mix-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ========== Product Levels ========== */
+.product-levels {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+}
+
+.product-levels h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.level-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.level-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--blue);
+}
+
+.level-card li {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 4px 0 4px 18px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.level-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ========== Subscription ========== */
+.subscription-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.subscription-section h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sub-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.sub-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.sub-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ========== Competitor Grid ========== */
+.competitor-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.competitor-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.competitor-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.competitor-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ========== Why Section ========== */
+.why-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.why-section h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.why-section p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 700px;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 850px) {
   .nav-links { display: none; }
@@ -771,10 +1035,16 @@ ul { list-style: none; }
   .page-hero h1 { font-size: 36px; }
 
   .feature-grid,
-  .shipping-grid {
+  .feature-grid-6,
+  .shipping-grid,
+  .market-grid,
+  .mix-grid,
+  .sub-grid {
     grid-template-columns: 1fr;
   }
 
+  .levels-grid,
+  .competitor-grid,
   .risk-grid,
   .values-grid,
   .process-grid,
