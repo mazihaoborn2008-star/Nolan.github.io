@@ -1083,15 +1083,29 @@ img { max-width: 100%; display: block; }
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(244,247,251,0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 24px;
+    bottom: 0;
+    background: rgba(244,247,251,0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 32px 24px;
     gap: 20px;
     border-bottom: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    z-index: 99;
+    z-index: 999;
+    overflow-y: auto;
   }
+  .nav-links a {
+    font-size: 17px;
+    padding: 8px 0;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--blue);
+  }
+
   .hamburger { display: flex; }
 
   .hero,
